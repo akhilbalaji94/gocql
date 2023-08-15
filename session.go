@@ -1583,11 +1583,8 @@ func (iter *Iter) Scan(dest ...interface{}) bool {
 	// currently only support scanning into an expand tuple, such that its the same
 	// as scanning in more values from a single column
 	if len(dest) != iter.meta.actualColCount {
-		iter.err = fmt.Errorf("gocql: not enough columns to scan into: have %d want %d", len(dest), iter.meta.actualColCount)
-		// Add a nil for each column we are missing
-		for i := len(dest); i < iter.meta.actualColCount; i++ {
-			dest = append(dest, nil)
-		}
+		iter.err = fmt.Errorf("gocql: not enough columns to scan into: have %d want %d dest %v and columns %v", len(dest), iter.meta.actualColCount, dest, iter.meta.columns)
+		return false
 	}
 	// i is the current position in dest, could posible replace it and just use
 	// slices of dest
