@@ -1,4 +1,4 @@
-module akhilbalaji94/gocql/gocql/lz4
+module github.com/akhilbalaji94/gocql/lz4
 
 go 1.16
 
