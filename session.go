@@ -1513,9 +1513,6 @@ func (is *iterScanner) Scan(dest ...interface{}) error {
 	iter := is.iter
 	// currently only support scanning into an expand tuple, such that its the same
 	// as scanning in more values from a single column
-	if len(dest) != iter.meta.actualColCount {
-		return fmt.Errorf("gocql: not enough columns to scan into: have %d want %d", len(dest), iter.meta.actualColCount)
-	}
 
 	// i is the current position in dest, could posible replace it and just use
 	// slices of dest
@@ -1583,10 +1580,6 @@ func (iter *Iter) Scan(dest ...interface{}) bool {
 
 	// currently only support scanning into an expand tuple, such that its the same
 	// as scanning in more values from a single column
-	if len(dest) != iter.meta.actualColCount {
-		iter.err = fmt.Errorf("gocql: not enough columns to scan into: have %d want %d", len(dest), iter.meta.actualColCount)
-		return false
-	}
 
 	// i is the current position in dest, could posible replace it and just use
 	// slices of dest
