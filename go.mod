@@ -1,4 +1,4 @@
-module akhilbalaji94/gocql/gocql
+module github.com/akhilbalaji94/gocql
 
 require (
 	github.com/bitly/go-hostpool v0.0.0-20171023180738-a3a6125de932 // indirect
