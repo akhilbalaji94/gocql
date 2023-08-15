@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"strings"
 
-	"akhilbalaji94/gocql/gocql/internal/murmur"
+	"github.com/akhilbalaji94/gocql/internal/murmur"
 )
 
 // a token partitioner
